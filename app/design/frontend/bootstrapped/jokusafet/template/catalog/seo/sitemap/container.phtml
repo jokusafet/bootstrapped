@@ -23,25 +23,17 @@
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Product description template
- *
- * @see Mage_Catalog_Block_Product_View_Description
- */
-/**
- * @var $this Mage_Catalog_Block_Product_View_Description
- */
 //echo get_class($this);
-/** @var $_description  Mage_Core_Block_Template  */
-//echo get_class($_description);
 ?>
-<?php $_description = $this->getProduct()->getDescription(); ?>
-<?php if ($_description): ?>
-    <h2><?php echo $this->__('Details') ?></h2>
-
-    <div class="std">
-        <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+<div class="page-sitemap">
+    <div class="page-title well">
+        <h1><?php echo $this->getTitle() ?></h1>
     </div>
-<?php endif; ?>
-
+    <div id="sitemap_top_links pull-right">
+        <?php echo $this->getChildHtml('links') ?>
+    </div>
+    <?php echo $this->getChildHtml('pager_top') ?>
+    <?php echo $this->getChildHtml('sitemap') ?>
+    <?php echo $this->getChildHtml('links') ?>
+    <?php echo $this->getChildHtml('pager_bottom') ?>
+</div>

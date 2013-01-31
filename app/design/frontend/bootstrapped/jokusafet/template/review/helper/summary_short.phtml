@@ -25,23 +25,19 @@
  */
 
 /**
- * Product description template
- *
- * @see Mage_Catalog_Block_Product_View_Description
- */
-/**
- * @var $this Mage_Catalog_Block_Product_View_Description
+ * @var $this Mage_Review_Block_Helper;
  */
 //echo get_class($this);
-/** @var $_description  Mage_Core_Block_Template  */
-//echo get_class($_description);
 ?>
-<?php $_description = $this->getProduct()->getDescription(); ?>
-<?php if ($_description): ?>
-    <h2><?php echo $this->__('Details') ?></h2>
-
-    <div class="std">
-        <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+<?php if ($this->getReviewsCount()): ?>
+    <div class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box">
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+            </div>
+        <?php endif;?>
+        <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='<?php echo $this->getReviewsUrl() ?>'; return false;"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a></span>
     </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Be the first to review this product') ?></a></p>
 <?php endif; ?>
-

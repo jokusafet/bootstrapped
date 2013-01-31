@@ -8,6 +8,15 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @author      Vedran Subotic <vedran@magenthon.com>
  */
+
+/**
+ * @var $this frontend/bootstrapped/jokusafet/template/tag/popular.phtml
+ */
+/**
+ * @var $this Mage_Tag_Block_Popular
+ */
+//echo get_class($this);
+//$this->
 ?>
 <div class="block block-tags well">
     <div class="block-title">
@@ -18,6 +27,7 @@
             <?php foreach ($this->getTags() as $_tag): ?>
                 <li><a href="<?php echo $_tag->getTaggedProductsUrl() ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->htmlEscape($_tag->getName()) ?></a></li>
             <?php endforeach; ?>
+
         </ul>
         <div class="actions">
             <a href="<?php echo $this->getUrl('tag/list') ?>"><?php echo $this->__('View All Tags') ?></a>
