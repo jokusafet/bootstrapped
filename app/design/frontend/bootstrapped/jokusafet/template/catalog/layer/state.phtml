@@ -1,4 +1,4 @@
-?php
+<?php
 /**
  * Magento responsive theme
  *
@@ -8,6 +8,10 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @author      Vedran Subotic <vedran@magenthon.com>
  */
+/**
+ * @var $this Mage_Catalog_Block_Layer_State;
+ */
+
 ?>
 <?php
 /**
@@ -16,7 +20,9 @@
  * @see Mage_Catalog_Block_Layer_State
  */
 ?>
+
 <?php $_filters = $this->getActiveFilters() ?>
+
 <?php if(!empty($_filters)): ?>
 
     <?php foreach ($_filters as $_filter): ?>
