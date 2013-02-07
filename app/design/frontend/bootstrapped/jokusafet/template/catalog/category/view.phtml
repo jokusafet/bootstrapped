@@ -25,15 +25,12 @@
     $_helper    = $this->helper('catalog/output');
     /** @var $_category Mage_Catalog_Model_Category  */
     $_category  = $this->getCurrentCategory();
-    /** @var $_imgHtml  Mage_Core_Block_Template  */
+    /** @var $_imgHtml string  */
     $_imgHtml   = '';
     if ($_imgUrl = $_category->getImageUrl()) {
         $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($_category->getName()).'" title="'.$this->htmlEscape($_category->getName()).'" /></p>';
-        echo gettype($_imgHtml);
-        echo get_class($_imgHtml);
-        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+                $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
-echo get_class($_imgHtml);
 ?>
 <?php
     /** @var $_items  Mage_Catalog_Model_Resource_Product_Collection  */
@@ -49,7 +46,7 @@ echo get_class($_imgHtml);
 
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
-<?php if($_imgUrl): ?>
+<?php if($_imgUrl):?>
     <?php echo $_imgHtml ?>
 <?php endif; ?>
 

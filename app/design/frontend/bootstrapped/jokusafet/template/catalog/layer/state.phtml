@@ -21,7 +21,11 @@
  */
 ?>
 
-<?php $_filters = $this->getActiveFilters() ?>
+<?php
+/** @var $_filters array  */
+$_filters = $this->getActiveFilters()
+
+?>
 
 <?php if(!empty($_filters)): ?>
 

@@ -11,10 +11,10 @@
 
 /* @var $this Mage_Catalog_Block_Product_Compare_Sidebar */
 ?>
-<?php 
-$_helper = $this->helper('catalog/product_compare');
-/** @var $_items  Mage_Core_Block_Template */
+<?php
 /** @var $_helper  Mage_Catalog_Helper_Product_Compare  */
+$_helper = $this->helper('catalog/product_compare');
+/** @var $_items Mage_Catalog_Model_Resource_Product_Compare_Item_Collection */
 $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 ?>
 <div class="block block-list block-compare well">
@@ -27,7 +27,10 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
     </div>
     <div class="block-content">
     <?php if($_helper->getItemCount() > 0): ?>
-        <?php foreach($_items as $_index => $_item): ?>
+        <?php
+        /** @var $_index integer  */
+        foreach($_items as $_index => $_item):
+            ?>
             <div class="item">
                 <input type="hidden" class="compare-item-id" value="<?php echo $_item->getId() ?>" />
                 

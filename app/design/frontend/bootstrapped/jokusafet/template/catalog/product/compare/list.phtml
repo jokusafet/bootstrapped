@@ -31,8 +31,9 @@
 
 </div>
 <?php
-//echo get_class($_total);
-$_total=$this->getItems()->getSize() ?>
+/** @var $_total integer */
+$_total=$this->getItems()->getSize();
+?>
 <?php if($_total): ?>
     <table class="data-table compare-table table table-bordered table-striped table-condensed" id="product_comparison">
     <?php $_i=0 ?>

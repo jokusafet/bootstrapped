@@ -24,7 +24,11 @@
         <?php if($this->canShowOptions()): ?>
 <!--                 <ul class="nav nav-pills pull-right"> -->
 <!--                    <li class="active offset1"><a title="" href="#">--><?php //echo $this->__('Shopping Options') ?><!--<span class="icon-chevron-right"></span></a></li>-->
-                    <?php $_filters = $this->getFilters() ?>
+                    <?php
+        /** @var $_filters array  */
+        $_filters = $this->getFilters();
+
+        ?>
                     <?php foreach ($_filters as $_filter): ?>
                         <?php if($_filter->getItemsCount()): ?>
                               <li class="dropdown">

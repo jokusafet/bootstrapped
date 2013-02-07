@@ -24,7 +24,11 @@
  * string If specified wraps children list in div with this class
  */
 ?>
-<?php $_menu = $this->renderCategoriesMenuHtml(0,'level-top') ?>
+<?php
+/** @var $_menu string */
+$_menu = $this->renderCategoriesMenuHtml(0,'level-top');
+?>
+
 <?php if($_menu): ?>
 <div class="nav-container well sidebar-nav">
     <ul class="nav nav-list">
