@@ -13,7 +13,11 @@
  */
 ?>
 <?php /* @var $this Mage_Catalog_Block_Product_View_Abstract */?>
-<?php $_product = $this->getProduct() ?>
+<?php
+/** @var $_product  Mage_Catalog_Model_Product  */
+$_product = $this->getProduct()
+//echo get_class($_product);
+?>
 
 <?php if ($_product->isAvailable()): ?>
     <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span class="label"><?php echo $this->__('In stock') ?></span></p>

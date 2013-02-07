@@ -29,6 +29,8 @@
     $_imgHtml   = '';
     if ($_imgUrl = $_category->getImageUrl()) {
         $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($_category->getName()).'" title="'.$this->htmlEscape($_category->getName()).'" /></p>';
+        echo gettype($_imgHtml);
+        echo get_class($_imgHtml);
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }
 echo get_class($_imgHtml);

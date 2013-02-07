@@ -26,14 +26,19 @@
 ?>
 
 <?php
-    //echo get_class($_image);
+    /** @var $_product Mage_Catalog_Model_Product */
     $_product = $this->getProduct();
+    //echo get_class($_product);
+    /** @var $_helper Mage_Catalog_Helper_Output */
     $_helper = $this->helper('catalog/output');
+    //echo get_class($_helper);
 ?>
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
 <div class="product-image product-image-zoom">
     <?php
+        /** @var $_img string  */
         $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        //echo gettype($_img);
     ?>
 
 		    <div class="modal hide fade" id="myGallery_<?php echo $_product->getId()?>">
